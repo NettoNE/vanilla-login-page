@@ -1,0 +1,171 @@
+:root {
+  --system-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --font-color: #999;
+  --font-color-contrast: #000000;
+  --font-color-emphasis: #007bff;
+  --font-color-btn: #f8f8f8;
+
+  --input-color-hover: #fcfcfc;
+
+  --space-unit: 1rem;
+
+  --space-sm: calc(var(--space-unit) * 0.6);
+  --space-md: var(--space-unit);
+  --space-mx: 1.2rem;
+
+  --btn-size: var(--space-sm);
+  --btn-font-size: var(--space-unit);
+  
+  --btn-black: #000000;
+  --btn-black-hover: #5e5e5e;
+
+
+  --border-radius: 5px;
+  --border-shadow:
+    0px 0px 0px 1px rgba(39, 39, 39, 0.05), 0px 0px 0px 1px #e0e0e0;
+
+  --transition-fast: 0.2s all ease;
+
+  --transform-default: scale(1.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--system-font);
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-mx);
+
+  padding: var(--space-md);
+
+  border-radius: var(--border-radius);
+
+  min-height: 15rem;
+
+  width: 20rem;
+  min-width: 10rem;
+
+  transition: var(--transition-fast);
+}
+
+.form__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: var(--font-color-contrast);
+}
+
+/* position container */
+.field {
+  position: relative;
+  width: 100%;
+}
+
+/* input style */
+
+.field__input {
+  padding: var(--space-sm);
+
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--border-shadow);
+  outline: none;
+  width: 100%;
+
+  transition: var(--transition-fast);
+}
+
+.field__input:focus {
+  transform: var(--transform-default);
+  background-color: var(--input-color-hover);
+}
+
+.field__input::placeholder {
+  opacity: 0;
+}
+
+/* floating label logic */
+
+.field__label {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+
+  transition: var(--transition-fast);
+  pointer-events: none;
+  color: var(--font-color);
+}
+
+.field__input:focus + .field__label,
+.field__input:not(:placeholder-shown) + .field__label {
+  top: -18px;
+  left: 5px;
+  font-size: 0.8rem;
+  color: var(--font-color-emphasis);
+}
+
+/* btn */
+
+.btn {
+  font-size: var(--btn-font-size);
+  font-weight: 500;
+  border: none;
+
+  padding: var(--btn-size);
+
+  transition: var(--transition-fast);
+}
+
+.btn--login {
+  border-radius: var(--border-radius);
+  color: var(--font-color-btn);
+  background-color: var(--btn-black);
+  width: 100%;
+}
+
+.btn--login:hover {
+  background-color: var(--btn-black-hover);
+}
+
+/* boostrap breakpoint */
+@media (max-width: 575.98px) {
+  :root {
+    --btn-size: var(--space-md);
+  }
+  .form {
+    width: 100%;
+    gap: var(--space-mx);
+  }
+  .field__input {
+    padding: var(--space-md);
+  }
+
+  .field__label {
+    left: 10px;
+    top: 15px;
+  }
+}
