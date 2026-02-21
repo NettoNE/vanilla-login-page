@@ -63,10 +63,10 @@ body {
 
   border-radius: var(--border-radius);
 
-  min-height: 15rem;
-
+  min-height: 20rem;
+  
   width: 20rem;
-  min-width: 10rem;
+  min-width: 15rem;
 
   transition: var(--transition-fast);
 }
