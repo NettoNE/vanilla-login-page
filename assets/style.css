@@ -16,6 +16,8 @@
   --space-md: var(--space-unit);
   --space-mx: 1.2rem;
 
+  --input-font-size: var(--space-unit);
+
   --btn-size: var(--space-sm);
   --btn-font-size: var(--space-unit);
 
@@ -87,6 +89,8 @@ body {
 /* input style */
 
 .field__input {
+  font-size: var(--input-font-size);
+
   padding: var(--space-sm);
 
   border: none;
