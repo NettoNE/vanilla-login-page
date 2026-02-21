@@ -18,10 +18,9 @@
 
   --btn-size: var(--space-sm);
   --btn-font-size: var(--space-unit);
-  
+
   --btn-black: #000000;
   --btn-black-hover: #5e5e5e;
-
 
   --border-radius: 5px;
   --border-shadow:
@@ -166,6 +165,6 @@ body {
 
   .field__label {
     left: 10px;
-    top: 15px;
+    top: 10px;
   }
 }
